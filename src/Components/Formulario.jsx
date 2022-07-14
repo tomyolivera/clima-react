@@ -1,4 +1,3 @@
-import { TextField, Button, Grid } from "@mui/material"
 import { useFormik } from "formik"
 import { object, string } from 'yup'
 
@@ -18,27 +17,21 @@ const Formulario = ({ datos, onSubmit }) => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Grid container spacing={2}>
-                <Grid item md={12}>
-                    <TextField
-                        name="ciudad"
-                        label="Ciudad"
-                        onChange={formik.handleChange}
-                        value={formik.values.ciudad}
-                    />
-                </Grid>
+            <input
+                name="ciudad"
+                label="Ciudad"
+                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                onChange={formik.handleChange}
+                value={formik.values.ciudad}
+            />
+            <input
+                name="pais"
+                label="Pais"
+                onChange={formik.handleChange}
+                value={formik.values.pais}
+            />
 
-                <Grid item md={12}>
-                    <TextField
-                        name="pais"
-                        label="Pais"
-                        onChange={formik.handleChange}
-                        value={formik.values.pais}
-                    />
-                </Grid>
-            </Grid>
-
-            <Button className="my-2" color="primary" variant="contained" fullWidth>BUSCAR CLIMA</Button>
+            <button className="px-3 bg-blue-700 hover:bg-blue-900 text-white">BUSCAR CLIMA</button>
         </form>
     )
 }
